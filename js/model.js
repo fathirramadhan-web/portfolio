@@ -191,6 +191,14 @@ const Model = {
       url: "https://dicoding.com/certificates/RVZKW5N0MZD5",
       img: "assets/certificates/ai.png",
     },
+    {
+      title: "TOEFL Prediction Test — Score 580",
+      issuer: "Central Course (Kampung Inggris Pare)",
+      date: "Oct 2026",
+      color: "#1a5276",
+      url: "assets/certificates/toefl.pdf",
+      img: "assets/certificates/toefl.png",
+    },
   ],
 
   // ---- Data fetching ----
