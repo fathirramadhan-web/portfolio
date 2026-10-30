@@ -94,14 +94,29 @@ const Model = {
   // Shown if the GitHub API can't be reached
   fallbackRepos: [
     {
-      name: "Aksaraku", language: "TypeScript", stargazers_count: 0,
-      html_url: "https://github.com/fathirramadhan-web/Aksaraku",
-      description: "A Medium-style poetry and writing platform built with modern web technologies.",
+      name: "portfolio", language: "JavaScript", stargazers_count: 0,
+      html_url: "https://github.com/fathirramadhan-web/portfolio",
+      description: "Personal portfolio website — Persona 5 style.",
     },
     {
-      name: "portfolio-fathir", language: "TypeScript", stargazers_count: 0,
-      html_url: "https://github.com/fathirramadhan-web/portfolio-fathir",
-      description: "Personal portfolio website showcasing projects, skills, and experience.",
+      name: "browser-qa-agent", language: "Python", stargazers_count: 0,
+      html_url: "https://github.com/fathirramadhan-web/browser-qa-agent",
+      description: "Browser-based QA automation agent.",
+    },
+    {
+      name: "Troopers", language: "TypeScript", stargazers_count: 0,
+      html_url: "https://github.com/fathirramadhan-web/Troopers",
+      description: "Troopers project.",
+    },
+    {
+      name: "Riana", language: "TypeScript", stargazers_count: 0,
+      html_url: "https://github.com/fathirramadhan-web/Riana",
+      description: "Riana project.",
+    },
+    {
+      name: "Monitoring-LCO", language: "PHP", stargazers_count: 0,
+      html_url: "https://github.com/fathirramadhan-web/Monitoring-LCO",
+      description: "LCO monitoring system.",
     },
   ],
 
@@ -190,16 +205,16 @@ const Model = {
 
   // ---- Data fetching ----
   async fetchRepos() {
-    const skip = new Set(this.featuredRepoNames);
+    const skip = new Set(this.featuredRepoNames.map(n => n.toLowerCase()));
     try {
       const res = await fetch(
         `https://api.github.com/users/${this.githubUser}/repos?per_page=100&sort=updated`
       );
       if (!res.ok) throw new Error(res.status);
-      const repos = (await res.json()).filter(r => !r.fork && !skip.has(r.name));
+      const repos = (await res.json()).filter(r => !r.fork && !skip.has(r.name.toLowerCase()));
       return { repos, live: true };
     } catch {
-      return { repos: this.fallbackRepos.filter(r => !skip.has(r.name)), live: false };
+      return { repos: this.fallbackRepos.filter(r => !skip.has(r.name.toLowerCase())), live: false };
     }
   },
 };
