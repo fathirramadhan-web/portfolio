@@ -180,17 +180,21 @@ body[data-screen="home"] .hud-back{display:none !important;}
 .card{
   color:var(--ink);position:relative;
   padding:20px 22px 18px;cursor:pointer;text-decoration:none;display:block;
-  transform:rotate(var(--tilt)) translateY(24px);opacity:0;
+  transform:rotate(var(--tilt));opacity:1;
   transition:transform .18s cubic-bezier(.7,0,.3,1), filter .18s;
   filter:drop-shadow(7px 7px 0 rgba(0,0,0,.5));
+  animation:cardIn .5s cubic-bezier(.2,1.1,.3,1) both;
+  animation-delay:var(--d,0ms);
 }
 .card::before{
   content:"";position:absolute;inset:0;background:var(--white);
   clip-path:polygon(0 6%, 3% 0, 100% 0, 100% 88%, 97% 100%, 0 100%);
 }
 .card>*{position:relative;}
-.screen.active .card{animation:cardIn .5s cubic-bezier(.2,1.1,.3,1) forwards;animation-delay:var(--d);}
-@keyframes cardIn{to{transform:rotate(var(--tilt)) translateY(0);opacity:1;}}
+@keyframes cardIn{
+  from{transform:rotate(var(--tilt)) translateY(24px);opacity:0;}
+  to{transform:rotate(var(--tilt)) translateY(0);opacity:1;}
+}
 .card:hover{
   transform:rotate(0deg) scale(1.03) !important;
   filter:drop-shadow(10px 10px 0 var(--black));
