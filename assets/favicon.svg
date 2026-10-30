@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <clipPath id="cut">
+      <polygon points="0,4 60,0 64,58 4,64" />
+    </clipPath>
+  </defs>
+  <!-- Background tilted card -->
+  <polygon points="0,4 60,0 64,58 4,64" fill="#e60012" />
+  <!-- Inner black paper cut -->
+  <polygon points="4,8 56,5 60,54 8,60" fill="#0b0b0d" />
+  <!-- Persona star accent -->
+  <polygon points="32,8 35,20 47,20 37,27 41,39 32,32 23,39 27,27 17,20 29,20" fill="#e60012" opacity="0.45" />
+  <!-- Monogram FR -->
+  <text x="32" y="44" font-family="'Impact','Arial Black',sans-serif" font-weight="900" font-size="28" fill="#f6f4ef" text-anchor="middle" letter-spacing="-1" transform="rotate(-4 32 32)">FR</text>
+</svg>
