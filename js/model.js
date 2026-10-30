@@ -197,7 +197,6 @@ const Model = {
       date: "Oct 2026",
       color: "#1a5276",
       url: "assets/certificates/toefl.pdf",
-      img: "assets/certificates/toefl.png",
     },
   ],
 
