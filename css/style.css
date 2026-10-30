@@ -73,6 +73,9 @@ body[data-screen]:not([data-screen="home"]) #slash{
   padding:2px 8px;margin-right:6px;font-weight:700;transform:skewX(-8deg);
   border-radius:2px;
 }
+body[data-screen="home"] .hud-back{display:none !important;}
+.hud-back{cursor:pointer;}
+.hud-back:hover{color:var(--red);}
 #stage{flex:1;position:relative;overflow:hidden;}
 
 /* ============ SCREENS ============ */
@@ -198,6 +201,7 @@ body[data-screen]:not([data-screen="home"]) #slash{
   background:var(--black);color:var(--white);
   font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;
   padding:4px 12px;transform:rotate(2deg);
+  max-width:calc(100% - 28px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
 }
 .card .lang::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;
   background:var(--lc,var(--red));margin-right:7px;}
@@ -535,15 +539,16 @@ body.has-art-home #big-name .ch:not(.box):not(.boxw){
   .menu-item.sel{transform:translateX(8px) !important;}
   .cursor-mark{right:-28px;font-size:18px;}
 
-  .sub .screen-head{margin:1vh 0 2vh;}
+  .sub .screen-head{margin:1vh 0 1vh;}
   .sub .screen-head .ransom{font-size:clamp(28px,7vw,46px);}
-  .back-hint{margin-left:12px;font-size:11px;padding:3px 8px;}
+  .back-hint{display:inline-block;margin:0 0 1.5vh 0;font-size:12px;padding:8px 16px;min-height:40px;}
 
   .grid, #feat-grid, #repo-grid, #cert-grid{
     grid-template-columns:1fr;
     gap:18px;
   }
-  .card{padding:16px 18px 14px;}
+  .card{padding:22px 18px 14px;}
+  .card .lang{font-size:11px;padding:3px 8px;max-width:75%;top:-10px;}
   .card h3{font-size:18px;}
   .card p{font-size:14px;min-height:auto;}
 
@@ -568,6 +573,17 @@ body.has-art-home #big-name .ch:not(.box):not(.boxw){
     backdrop-filter:blur(4px);
   }
   #hud-bottom .key{display:none;}
+  #hud-bottom .hud-hint{display:none;}
+  #hud-bottom .hud-back{
+    cursor:pointer;
+    background:var(--red);color:var(--white);
+    padding:6px 18px;font-weight:700;letter-spacing:.12em;
+    text-transform:uppercase;font-size:12px;
+    transform:skewX(-6deg);
+    min-height:34px;display:inline-flex;align-items:center;
+    touch-action:manipulation;
+  }
+  #hud-bottom .hud-back::before{content:"← ";}
 }
 
 @media (prefers-reduced-motion:reduce){
