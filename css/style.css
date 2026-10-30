@@ -6,19 +6,18 @@
   --ink:#111;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-html,body{height:100%;}
+html,body{height:100%;overflow:hidden;}
 body{
   background:var(--black);
   color:var(--white);
   font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif;
-  overflow:hidden;
   -webkit-font-smoothing:antialiased;
   user-select:none;
 }
 .display{font-family:'Archivo Black','Arial Black',Impact,sans-serif;}
 
 /* ============ BACKGROUND LAYERS ============ */
-#bg{position:fixed;inset:-6vmax;z-index:0;pointer-events:none;}
+#bg{position:fixed;inset:-6vmax;z-index:0;pointer-events:none;overflow:hidden;}
 .bg-layer{position:absolute;inset:0;will-change:transform;}
 #bg-stripes{
   background:repeating-linear-gradient(115deg,
@@ -350,7 +349,7 @@ body[data-screen]:not([data-screen="home"]) #hero-art{
 }
 
 /* ============ WIPE TRANSITION ============ */
-#wipe{position:fixed;inset:-10%;z-index:50;pointer-events:none;}
+#wipe{position:fixed;inset:-10%;z-index:50;pointer-events:none;overflow:hidden;}
 #wipe .pane{
   position:absolute;inset:0;transform:translateX(-130%) skewX(-14deg);
 }
@@ -525,6 +524,7 @@ body.has-art-home #big-name .ch:not(.box):not(.boxw){
 
 @media (max-width:768px){
   #stage{overflow-y:auto;}
+  #screen-home.active{justify-content:flex-start;padding-top:4vh;}
   .screen{padding:2vh 5vw 8vh;}
   #intro-eyebrow{font-size:13px;letter-spacing:.3em;}
   #big-name{margin-bottom:1.8vh;}
