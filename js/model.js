@@ -89,6 +89,11 @@ const Model = {
     "Aksaraku",
     "MetaPrediction",
     "SIMASET",
+    "Troopers",
+    "Riana",
+    "monitor-lco",
+    "Monitoring-LCO",
+    "lco-monitor",
   ],
 
   // Shown if the GitHub API can't be reached
@@ -102,21 +107,6 @@ const Model = {
       name: "browser-qa-agent", language: "Python", stargazers_count: 0,
       html_url: "https://github.com/fathirramadhan-web/browser-qa-agent",
       description: "Browser-based QA automation agent.",
-    },
-    {
-      name: "Troopers", language: "TypeScript", stargazers_count: 0,
-      html_url: "https://github.com/fathirramadhan-web/Troopers",
-      description: "Troopers project.",
-    },
-    {
-      name: "Riana", language: "TypeScript", stargazers_count: 0,
-      html_url: "https://github.com/fathirramadhan-web/Riana",
-      description: "Riana project.",
-    },
-    {
-      name: "Monitoring-LCO", language: "PHP", stargazers_count: 0,
-      html_url: "https://github.com/fathirramadhan-web/Monitoring-LCO",
-      description: "LCO monitoring system.",
     },
   ],
 
